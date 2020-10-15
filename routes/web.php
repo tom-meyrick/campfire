@@ -18,6 +18,6 @@ Route::get('/', function () {
 });
 
 Route::post('/projects', 'App\HTTP\Controllers\ProjectController@store');
-
+Route::get('/projects/{project}', 'App\HTTP\Controllers\ProjectController@show');
 Route::get('/projects', 'App\HTTP\Controllers\ProjectController@index');
 
