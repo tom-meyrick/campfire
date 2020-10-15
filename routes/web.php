@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +19,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/projects', 'App\HTTP\Controllers\ProjectController@store');
+Auth::routes(['register' => false]);
+
+Route::post('/projects', 'App\HTTP\Controllers\ProjectController@store')->middleware('auth');
 Route::get('/projects/{project}', 'App\HTTP\Controllers\ProjectController@show');
 Route::get('/projects', 'App\HTTP\Controllers\ProjectController@index');
 
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
