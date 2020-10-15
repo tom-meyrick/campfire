@@ -1,12 +1,16 @@
 <html>
 <head>
-<h1>Campfire</h1>
+<title>Campfire</title>
 </head>
 <body>
     <h1>Campfire</h1>
 
-    @foreach($projects as $project)
+    @forelse($projects as $project)
+    <a href="{{$project->path()}}">
     <li>{{ $project->title }}</li>
-    @endforeach
+    </a>
+    @empty
+    <li>No projects yet</li>
+    @endforelse
 </body>
 </html>
