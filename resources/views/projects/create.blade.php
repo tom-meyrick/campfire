@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Create</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-</head>
+@extends('layouts.app')
 
-<body>
-
-<div class="container">
-<form method="POST" action="/projects" style="padding-top: 40px">
+@section('content')
+<form method="POST" action="/projects">
 @csrf
 <h1 class="heading-is-1" style="padding-bottom: 20px">Create a project</h1>
 <div class="field">
@@ -27,11 +20,8 @@
 
 <div class="control">
     <button class="button is-link">Submit</button>
+    <a href="/projects">Cancel</a>
   </div>
 
 </form>
-</div>
-
-</body>
-
-</html>
+@endsection

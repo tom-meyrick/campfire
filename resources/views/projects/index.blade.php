@@ -1,19 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Campfire</title>
-</head>
+@extends('layouts.app')
 
-<body>
-    <h1>Campfire</h1>
-
+@section('content')
+    <div style="display: flex; align-items: center">
+    <h1 style="margin-right: auto">Campfire</h1>
+    <a href="/projects/create">Add a new project</a>
+    </div>
+<ul>
     @forelse($projects as $project)
+
     <a href="{{$project->path()}}">
     <li>{{ $project->title }}</li>
     </a>
     @empty
     <li>No projects yet</li>
     @endforelse
-</body>
-
-</html>
+    </ul>
+@endsection
