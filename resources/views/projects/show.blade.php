@@ -1,11 +1,14 @@
+<!DOCTYPE html>
 <html>
 <head>
-<h1>Campfire</h1>
+<title>Campfire</title>
 </head>
+
 <body>
     <h1>{{$project->title}}</h1>
 
     <div>{{$project->description}}</div>
     
 </body>
+
 </html>

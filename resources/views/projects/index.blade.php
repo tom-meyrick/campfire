@@ -1,7 +1,9 @@
+<!DOCTYPE html>
 <html>
 <head>
 <title>Campfire</title>
 </head>
+
 <body>
     <h1>Campfire</h1>
 
@@ -13,4 +15,5 @@
     <li>No projects yet</li>
     @endforelse
 </body>
+
 </html>
