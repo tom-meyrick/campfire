@@ -21,9 +21,13 @@ Route::get('/', function () {
 
 Auth::routes(['register' => false]);
 
-Route::post('/projects', 'App\HTTP\Controllers\ProjectController@store')->middleware('auth');
-Route::get('/projects/{project}', 'App\HTTP\Controllers\ProjectController@show');
-Route::get('/projects', 'App\HTTP\Controllers\ProjectController@index');
+Route::group(['middleware' => 'auth'], function() {
+    // Projects 
+    Route::post('/projects', 'App\HTTP\Controllers\ProjectController@store');
+    Route::get('/projects/{project}', 'App\HTTP\Controllers\ProjectController@show');
+    Route::get('/projects', 'App\HTTP\Controllers\ProjectController@index');
+    // Home
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+});
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

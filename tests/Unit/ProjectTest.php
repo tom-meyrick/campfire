@@ -15,4 +15,11 @@ class ProjectTest extends TestCase
         $project = Project::factory()->create(); 
         $this->assertEquals('/projects/' . $project->id, $project->path());
     }
+
+     /** @test */
+     public function it_belongs_to_an_owner()
+     {
+         $project = Project::factory()->create(); 
+         $this->assertInstanceOf('App/Models/User', $project->owner);
+     }
 }
