@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use App\Models\Project;
+use App\Models\Task;
 use Tests\TestCase;
 
 class ProjectTasksTest extends TestCase
@@ -15,8 +16,6 @@ class ProjectTasksTest extends TestCase
     public function a_project_can_have_tasks()
     {
 
-        $this->withoutExceptionHandling();
-
         $this->signIn();
 
         $project = Project::factory()->create(['owner_id' => auth()->id()]);
@@ -26,5 +25,14 @@ class ProjectTasksTest extends TestCase
         $this->get($project->path())
             ->assertSee('Test task');
     }
+
+      /** @test */
+      public function a_task_requires_a_body()
+      {
+        $this->signIn();
+        $project = Project::factory()->create(['owner_id' => auth()->id()]);
+        $attributes = Task::factory()->raw(['body' => '']);
+        $this->post($project->path() . '/tasks', $attributes)->assertSessionHasErrors('body');
+      }
 
 }
