@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Post;
+use Spatie\YamlFrontMatter\YamlFrontMatter;
+use Symfony\Component\Translation\Loader\YamlFileLoader;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +22,6 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/post/{post}', function($slug) {
-    dd($slug);
+Route::get('posts/{post}', function($slug) {
     return view('post', ['post' => Post::find($slug)]);
-})->where('post', '[A-z_\-]+');
+})->where('post', '[A-z0-9_\-]+');
