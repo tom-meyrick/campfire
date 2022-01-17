@@ -4,7 +4,7 @@
         {{ $post->title }}
     </h1>
     <div>      <p>
-        <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
+        <a href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a>
     </p>
         {!! $post->body !!}
     </div>
