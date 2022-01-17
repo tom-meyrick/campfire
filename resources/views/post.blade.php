@@ -3,10 +3,9 @@
     <h1>
         {{ $post->title }}
     </h1>
-    <div>
-        <p>
-            <a href="#">{{ $post->category->name }}</a>
-        </p>
+    <div>      <p>
+        <a href="/categories/{{ $post->category->id }}">{{ $post->category->name }}</a>
+    </p>
         {!! $post->body !!}
     </div>
 </article>
