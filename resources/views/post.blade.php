@@ -34,7 +34,7 @@
                         </a>
 
                         <div class="space-x-2">
-                            <x-category-label :category="$post->category"/>
+                            <x-category-label :category="$post->category" />
                         </div>
                     </div>
 
@@ -43,12 +43,7 @@
                     </h1>
 
                     <div class="space-y-4 lg:text-lg leading-loose">
-                        <p>{{ $post->body }}</p>
-
-                        <p>{{ $post->body }}</p>
-
-
-                        <p>{{ $post->body }}</p>
+                        {!! $post->body !!}
                     </div>
                 </div>
             </article>
