@@ -14,8 +14,12 @@
                            type="text"
                            id="name"
                            name="name"
-                           value="Name"
+                           value="{{ old('name') }}"
                            required>
+
+                        @error('name')
+                            <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                        @enderror
                 </div>
                 {{-- Username --}}
                 <div class="mb-6">
@@ -27,8 +31,12 @@
                            type="text"
                            id="username"
                            name="username"
-                           value="Username"
+                           value="{{ old('username') }}"
                            required>
+
+                           @error('username')
+                           <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                       @enderror
                 </div>
                          {{-- Email --}}
                          <div class="mb-6">
@@ -40,8 +48,12 @@
                                    type="email"
                                    id="email"
                                    name="email"
-                                   value="Email"
+                                   value="{{ old('email') }}"
                                    required>
+
+                                   @error('email')
+                                   <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                               @enderror
                         </div>
                                  {{-- Password --}}
                 <div class="mb-6">
@@ -53,8 +65,11 @@
                            type="password"
                            id="password"
                            name="password"
-                           value="Password"
                            required>
+
+                           @error('password')
+                           <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                       @enderror
                 </div>
                 {{-- Button --}}
                 <div class="mb-6">
