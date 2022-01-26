@@ -60,4 +60,7 @@
                 Flaticon</a>
         </footer>
     </section>
+    
+   <x-flash />
+
 </body>
