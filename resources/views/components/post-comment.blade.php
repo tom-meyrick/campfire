@@ -1,16 +1,19 @@
-<article class="flex bg-gray-100 border border-gray-200 rounded-xl p-6 space-x-4">
+@props(['comment'])
+<x-panel class="bg-gray-50">
+<article class="flex space-x-4">
     <div style="flex-shrink: 0;">
-        <img src="http://i.pravatar.cc/60" alt="User's avatae" class="rounded-full" width="60" height="60">
+        <img src="https://i.pravatar.cc/60?u={{ $comment->id }}" alt="" width="60" height="60" class="rounded-full">
     </div>
     <div>
         <header class="mb-4">
-            <h3 class="font-bold">Opinionated idiot</h3>
+            <h3 class="font-bold">{{ $comment->author->username }}</h3>
             <p class="text-xs">
-                Posted <time>yesterday</time>
+                Posted <time>{{ $comment->created_at }}</time>
             </p>
         </header>
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aut temporibus fugiat laboriosam magnam nesciunt necessitatibus cum earum, minima architecto.</p>
+        <p>{{ $comment->body }}</p>
 
     </div>
 </article>
+</x-panel>
