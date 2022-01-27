@@ -10,7 +10,6 @@ class Post extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'excerpt', 'body', 'slug', 'category_id']; 
     protected $with = ['category', 'author'];
 
     public function scopeFilter($query, array $filters) {
