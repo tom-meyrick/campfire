@@ -7,6 +7,4 @@ if ($active) {
 }
 @endphp
 
-<a {{ $attributes(['class' => $classes]) }}>
-    {{ $slot }}
-</a>
+<a {{ $attributes(['class' => $classes]) }}>{{ $slot }}</a>

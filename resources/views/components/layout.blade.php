@@ -70,7 +70,7 @@
                 Flaticon</a>
         </footer>
     </section>
-    
-   <x-flash />
+
+    <x-flash />
 
 </body>
