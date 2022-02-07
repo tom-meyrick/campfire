@@ -1,3 +1,7 @@
+### Campfire
+
+A CRUD blog produced alongside Laracasts' Laravel 8 From Scratch series.
+
 ## Installation
 
 Clone the repository, install dependencies and initialise your .env file. 
