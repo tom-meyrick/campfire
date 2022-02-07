@@ -2,7 +2,7 @@
 
 Clone the repository, install dependencies and initialise your .env file. 
 ````
-git clone git@github.com:tom-meyrick/campfire.git blog
+git clone git@github.com:tom-meyrick/campfire.git
 composer install
 cp .env.example .env
 ````
